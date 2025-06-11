@@ -1,0 +1,144 @@
+[github_app]
+pr_commands = ["/review"]
+auto_run_on_pr_creation = true
+
+[pr_reviewer]
+force_new_review = true
+require_code_suggestions_review = true
+extra_instructions = """\
+Review Instructions: GraphQL Query Naming Format
+
+You are only required to review the **names of GraphQL queries** to ensure they strictly follow this naming convention:
+
+Required Format:
+QueryName + 'For' + OrganizationName
+
+Where:
+- QueryName: Any single or compound case non-sensitive words or abbreviation (e.g., GetUser, GetPersonalDetails, GetAssociateById, Admin, Data)
+- For: The literal word 'For' (case-sensitive)
+- OrganizationName: Any single or compound case non-sensitive words or abbreviation (e.g., Profile, Ama, MyLocalSocial, GEP, BeneficiaryService, ServiceOfUsers, MyAssociates, ABC, Teaming, Shuffling)
+
+Examples of valid query names:
+- GetUserForProfile
+- RequiredComplianceLearningForMyLocalSocial
+- DataForBeneficiaryService
+- GetAssociateByWinForGEP
+- GetAssociateByWinForAma
+
+Rules:
+1. Do not review or comment on logic, structure, performance, or syntax of the code.
+2. Only check the query names. Ignore all other parts of the codebase.
+3. Do not infer or verify the purpose, logic, or correctness of the names themselves.
+4. If the query name matches the required format, your response must be: "Nothing to review".
+5. If the query name does not match the format, suggest only a name correction that follows the correct structure.
+
+This ensures consistency and clarity across all GraphQL query names in the project.
+"""
+
+[pr_code_suggestions]
+extra_instructions="""\
+Review Instructions: GraphQL Query Naming Format
+
+You are only required to review the **names of GraphQL queries** to ensure they strictly follow this naming convention:
+
+Required Format:
+QueryName + 'For' + OrganizationName
+
+Where:
+- QueryName: Any single or compound case non-sensitive words or abbreviation (e.g., GetUser, GetPersonalDetails, GetAssociateById, Admin, Data)
+- For: The literal word 'For' (case-sensitive)
+- OrganizationName: Any single or compound case non-sensitive words or abbreviation (e.g., Profile, Ama, MyLocalSocial, GEP, BeneficiaryService, ServiceOfUsers, MyAssociates, ABC, Teaming, Shuffling)
+
+Examples of valid query names:
+- GetUserForProfile
+- RequiredComplianceLearningForMyLocalSocial
+- DataForBeneficiaryService
+- GetAssociateByWinForGEP
+- GetAssociateByWinForAma
+
+Rules:
+1. Do not review or comment on logic, structure, performance, or syntax of the code.
+2. Only check the query names. Ignore all other parts of the codebase.
+3. Do not infer or verify the purpose, logic, or correctness of the names themselves.
+4. If the query name matches the required format, your response must be: "Nothing to review".
+5. If the query name does not match the format, suggest only a name correction that follows the correct structure.
+
+This ensures consistency and clarity across all GraphQL query names in the project.
+"""
+
+
+
+
+
+
+# [github_app]
+# pr_commands = ["/review", "/improve"]
+# auto_run_on_pr_creation = true
+
+# [pr_reviewer]
+# force_new_review = true
+# require_code_suggestions_review = true
+# extra_instructions = """\
+# Please ensure that the name of every GraphQL query follows this format:
+
+# __String__+"For"+__String__
+
+# For example, query names can be: GetRequiredComplianceLearningForMyLocalSocial, GetUserForProfile, GetPersonalDetailsForAma, GetAssociateByIdForBeneficiaryService, GetAssociateByWinForGEP etc.
+
+
+# This naming format helps keep queries consistent and easily identifiable.
+# If the current name does not follow the format, rename it accordingly
+# Only suggest changes that correct naming to fit the required pattern; ignore all other suggestions
+# Ensure PascalCase is used when forming query names (e.g., AcmeCorpForAlice)
+# """
+
+# [auto_best_practices]
+# utilize_auto_best_practices = true
+
+# [pr_code_suggestions]
+# extra_instructions="""\
+# (1) Ensure the name of every GraphQL query follows the format: __String__+"For"+__String__
+# (2) Do not change any logic or functionality of the queries—only rename them if necessary
+# (3) Maintain PascalCase for the query names (e.g., TechCorpForAlice)
+# (4) If the current name does not follow the format, rename it accordingly
+# (5) Only suggest changes that correct naming to fit the required pattern; ignore all other suggestions
+# """
+
+
+
+
+# [github_app]
+# pr_commands = ["/review", "/improve"]
+# auto_run_on_pr_creation = true
+
+# [pr_reviewer]
+# force_new_review = true
+# require_code_suggestions_review = true
+# extra_instructions = """\
+# Please ensure that the name of every GraphQL query follows this exact format:
+
+# Strings+For+Strings
+# The strings can be of any case.
+
+# Some examples of valid query names are: GetRequiredComplianceLearningForMyLocalSocial, GetUserForProfile, GetPersonalDetailsForAma, GetAssociateByIdForBeneficiaryService, GetAssociateByWinForGEP etc.
+
+# DO NOT REVIEW ANYTHING ELSE OTHER THAN NAMING CONVENTIION
+# Only suggest changes that correct naming to fit this pattern; ignore all other code, logic, formatting, or structural concerns.
+# Do NOT verify or infer the meaning, purpose, or validity of the strings used. You are only checking formatting structure.
+# If the current name matches the format above, Recommended focus areas for review should be: "Nothing to review."
+
+# If the current name does not follow the above pattern, Recommended focus areas for review should be:
+# "GraphQL naming convention should follow QueryNameForOrganizationName (OrganizationName might not be a valid organization) format."
+
+# This naming format helps keep queries consistent and easily identifiable.
+# """
+
+# [pr_code_suggestions]
+# extra_instructions = """\
+# (1) Ensure the name of every GraphQL query follows the format: Strings+For+Strings (The strings can be of any case).
+# (2) If the naming convention follows this format, do not generate any suggestions.
+# (3) Do not change any logic or functionality of the queries—only rename them if necessary.
+# (4) Some examples of valid query names are: GetRequiredComplianceLearningForMyLocalSocial, GetUserForProfile, GetPersonalDetailsForAma, GetAssociateByIdForBeneficiaryService, GetAssociateByWinForGEP etc.
+# (5) If the current name does not follow the format, suggest: "GraphQL naming convention should follow QueryNameForOrganizationName (OrganizationName might not be a valid organization) format."
+# (6) Only suggest changes that correct naming to fit the required pattern; ignore all other suggestions.
+# """
